@@ -512,7 +512,7 @@
             if (!c || reduce || !matchMedia("(hover:hover) and (pointer:fine)").matches) return;
             document.documentElement.classList.add("has-cursor");
             let x = -100, y = -100, cx = x, cy = y;
-            addEventListener("pointermove", e => { x = e.clientX; y = e.clientY; c.classList.add("on"); c.classList.toggle("big", !!(e.target.closest && e.target.closest("a,button"))) });
+            addEventListener("pointermove", e => { x = e.clientX; y = e.clientY; c.classList.add("on"); c.classList.toggle("big", !!(e.target.closest && e.target.closest("a,button,.photo,.art,.devart,.pcard,.sk"))) });
             document.addEventListener("pointerleave", () => c.classList.remove("on"));
             (function loop() { cx += (x - cx) * .22; cy += (y - cy) * .22; c.style.transform = "translate(" + cx + "px," + cy + "px)"; requestAnimationFrame(loop) })();
         })();
